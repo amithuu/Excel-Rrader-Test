@@ -3,8 +3,11 @@ from rest_framework import status
 from rest_framework.decorators import api_view
 from rest_framework.response import Response
 from .serializers import DynamicExcelDataSerializer
+from django.conf import settings
+import os
 
-EXCEL_FILE_PATH = r'C:\Users\Amith\OneDrive\Pictures\APi_test\amazon\mobiles\files\testfile.xlsx'
+EXCEL_FILE_PATH = os.path.join(settings.BASE_DIR, 'amazon', 'mobiles', 'files', 'testfile.xlsx')
+
 
 
 @api_view(['GET'])
